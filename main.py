@@ -185,7 +185,6 @@ def main():
         st.markdown(f"<div class='generated-password'>{st.session_state.generated_password}</div>", unsafe_allow_html=True)
         
         st.markdown("</div>", unsafe_allow_html=True)
-    
 
     if password_input:
         result = check_password_strength(password_input)
@@ -199,10 +198,10 @@ def main():
         progress_value = result['score'] / 5
         st.progress(progress_value)
         
-        # Score details
+
         st.markdown(f"**Score:** {result['score']:.1f}/5.0")
         
-        # Feedback section
+
         if result['feedback']:
             st.markdown("### 💡 Suggestions for improvement:")
             for item in result['feedback']:
@@ -222,7 +221,7 @@ def main():
             for tip in tips:
                 st.markdown(f"- {tip}")
 
-    # Password history (optional feature)
+    
     if st.checkbox("Enable Password History"):
         if 'password_history' not in st.session_state:
             st.session_state.password_history = []
