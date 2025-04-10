@@ -194,7 +194,7 @@ def main():
         st.markdown("<div class='meter-container'>", unsafe_allow_html=True)
         st.markdown(f"### Password Strength: <span style='color:{result['color']}'>{result['strength']}</span>", unsafe_allow_html=True)
         
-        # Visual strength meter
+   
         progress_color = f"progress-color: {result['color']};"
         progress_value = result['score'] / 5
         st.progress(progress_value)
@@ -210,7 +210,7 @@ def main():
         
         st.markdown("</div>", unsafe_allow_html=True)
         
-        # Security tips
+
         if result['strength'] != "Strong":
             st.markdown("### 🛡️ General Password Tips:")
             tips = [
